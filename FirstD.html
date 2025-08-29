@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>User Table</title>
+  <style>
+    :root {
+      --bg: #0f172a;          /* slate-900 */
+      --panel: #111827;       /* gray-900 */
+      --text: #e5e7eb;        /* gray-200 */
+      --muted: #9ca3af;       /* gray-400 */
+      --accent: #60a5fa;      /* blue-400 */
+      --border: #1f2937;      /* gray-800 */
+      --row-alt: #0b1220;     /* darker alt */
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      background: radial-gradient(1200px 800px at 20% 0%, #030748, var(--bg));
+      color: var(--text);
+      padding: 24px;
+    }
+
+    .wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      font-size: clamp(1.25rem, 2vw + 0.5rem, 1.75rem);
+      margin: 0 0 16px;
+      line-height: 1.2;
+    }
+
+    .card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 16px; 
+      box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+      backdrop-filter: blur(6px);
+    }
+
+    .table-wrap {
+      overflow-x: auto; /* mobile scroll */
+      border-radius: 12px;
+      border: 1px solid var(--border);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 720px; /* keep columns readable */
+      background: var(--panel);
+    }
+
+    caption {
+      text-align: left;
+      padding: 12px 16px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    thead th {
+      text-align: left;
+      font-weight: 600;
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--border);
+      background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0));
+      letter-spacing: .02em;
+      white-space: nowrap;
+    }
+
+    tbody td {
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: middle;
+    }
+
+    tbody tr:nth-child(even) {
+      background: var(--row-alt);
+    }
+
+    .gid {
+      font-variant-numeric: tabular-nums;
+      color: #cbd5e1; /* gray-300 */
+      width: 100px;
+    }
+
+    .username { font-weight: 600; }
+    .gender { color: var(--muted); }
+    .location { color: #cbd5e1; }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    a:hover { text-decoration: underline; }
+
+    /* Small helper for tighter cells on narrow screens */
+    @media (max-width: 520px) {
+      tbody td, thead th { padding: 10px 12px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>User Directory</h1>
+
+    <div class="card table-wrap">
+      <table role="table" aria-label="User Directory">
+        <caption>Sample data — replace or add your own rows.</caption>
+        <thead>
+          <tr>
+            <th scope="col">User ID</th>
+            <th scope="col">Username</th>
+            <th scope="col">Gender</th>
+            <th scope="col">Location</th>
+            <th scope="col">GitHub Username</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Duplicate or edit these <tr> rows with your real data -->
+          <tr>
+            <td class="gid">001</td>
+            <td class="username">Saidu Fullah</td>
+            <td class="gender">Male</td>
+            <td class="location">Freetown, Sierra Leone</td>
+            <td><a href="https://github.com/awallace" target="_blank" rel="noopener noreferrer">Professor</a></td>
+          </tr>
+          <tr>
+            <td class="gid">002</td>
+            <td class="username">jdoe</td>
+            <td class="gender">Male</td>
+            <td class="location">Lagos, Nigeria</td>
+            <td><a href="https://github.com/jdoe" target="_blank" rel="noopener noreferrer">@jdoe</a></td>
+          </tr>
+          <tr>
+            <td class="gid">003</td>
+            <td class="username">kofi</td>
+            <td class="gender">Male</td>
+            <td class="location">Accra, Ghana</td>
+            <td><a href="https://github.com/kofi" target="_blank" rel="noopener noreferrer">@kofi</a></td>
+          </tr>
+          <tr>
+            <td class="gid">004</td>
+            <td class="username">amina</td>
+            <td class="gender">Female</td>
+            <td class="location">Nairobi, Kenya</td>
+            <td><a href="https://github.com/amina" target="_blank" rel="noopener noreferrer">@amina</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- HOW TO USE
+      1) Save this as index.html (or any name) in VS Code.
+      2) Right–click the file and choose "Open with Live Server" (if you have the extension) or just open it in your browser.
+      3) Replace the sample rows in <tbody> with your real data.
+    -->
+  </div>
+</body>
+</html>
